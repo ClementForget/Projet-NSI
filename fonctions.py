@@ -9,6 +9,10 @@ def aff_data(classe):
     print(f"{n} - {dico.get('prenom')} {dico.get('nom')}, agé de : {dico.get('age')}, en classe de : {dico.get('classe')}")
     n = n+1
 
-
-def del_data(classe, num):
-  classe.del[num]
+def dell_data(classe):
+  nbr_classe = len(classe)
+  print(f"Il y a actuellement {nbr_classe} dans votre data base")
+  delete = int(input("Qui voulez vous supprimer ? Insérez son numeo : "))
+  delete=delete-1
+  del classe[delete]
+  return classe

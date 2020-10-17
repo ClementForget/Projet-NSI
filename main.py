@@ -17,6 +17,7 @@ while(finish != True):
     print("\n")
     print("Pour ajouter des gens faites 1")
     print("Pour afficher vos données faites 2")
+    print("Pour suprimer un element du tableau 3")
     try:
       menu = int(input("Quelle option choisez vous ? "))
     except:
@@ -36,7 +37,10 @@ while(finish != True):
       print("\n")
     
     elif(menu == 2):
-  #Affichage table
+      #Affichage table
+      if (len(classe)== 0):
+        print(" La classe est vide ")
+        continue
       print("\n")
       print('Vos données : ')
       print("\n")
@@ -44,11 +48,21 @@ while(finish != True):
       print("\n")
 
     elif(menu == 3):
-      print("\n")
-      print('Vos données : ')
-      print("\n")
-      print(fonctions.aff_data(classe))
-      print("\n")
+      if(len(classe) == 0):
+        print("Vous ne pouvez pas supprimer quelqu'un, il n'y a personne dans votre liste ! ")
+        continue
+      else:
+        print("\n")
+        print('Vos données : ')
+        print("\n")
+        print(fonctions.aff_data(classe))
+        print("\n")
+        classe = fonctions.dell_data(classe)
+        print("\n")
+        print('Vos données : ')
+        print("\n")
+        print(fonctions.aff_data(classe))
+        print("\n")
       
 
     else:
